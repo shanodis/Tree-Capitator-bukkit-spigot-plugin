@@ -31,9 +31,9 @@ public class PluginListener implements Listener {
 			return;
 		
 		Vector3i regularSize = null, bigSize = null;
-		Material treeMaterial = block.getType();
+		Material blockMaterial = block.getType();
 		
-		switch(treeMaterial) {
+		switch(blockMaterial) {
 		
 		case OAK_LOG:
 			regularSize = new Vector3i(2, 7, 2);
@@ -62,7 +62,7 @@ public class PluginListener implements Listener {
 			break;
 			
 		default:
-			break;
+			return;
 		}
 		
 		Type treeType = new Type(block, regularSize, bigSize);
